@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Creative Print - Página Inicial</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden; /* Ocultar barra de rolagem horizontal */
+            zoom: 0.8; /* Zoom-out automático para ajustar o layout */
+        }
+
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: none; /* Remove a sombra */
+            width: 100%; /* Tornar a largura 100% para responsividade */
+            max-width: 400px; /* Definir um limite de largura */
+            max-height: 100%;
+            overflow-y: auto;
+			overflow-x: hidden; /* Ocultar barra de rolagem horizontal */
+        }
+
+        button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        button:hover:enabled {
+            background-color: #0056b3;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .back-button {
+            display: none;
+            margin-top: 20px;
+            background-color: #FF6347;
+            width: auto; /* Adicionando largura automática */
+            margin-left: auto; /* Centraliza horizontalmente */
+            margin-right: auto; /* Centraliza horizontalmente */
+            text-align: center; /* Garante que o conteúdo dentro do botão fique centralizado */
+        }
+
+        .back-button.active {
+            display: inline-block;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            body, html {
+                zoom: 0.75; /* Ajuste do zoom em telas menores */
+            }
+            .container {
+                width: 90%; /* Container ocupa 90% da tela em dispositivos menores */
+            }
+        }
+
+        @media (max-width: 480px) {
+            body, html {
+                zoom: 0.7; /* Mais zoom-out em telas pequenas */
+            }
+            .container {
+                width: 95%; /* Container ocupa 95% da tela em dispositivos muito pequenos */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Creative Print</h1>
+
+        <!-- Menu de Navegação -->
+        <div id="menu">
+            <button onclick="mostrarSeção('precos')">Tabela de Preços</button>
+            <button onclick="mostrarSeção('calculadoraAdesivos')">Calculadora para Adesivos</button>
+            <button onclick="mostrarSeção('calculadoraBanner')">Calculadora para Banner</button>
+            <button onclick="mostrarSeção('calculadoraImpressao')">Calculadora para Impressão A4</button>
+			<button onclick="mostrarSeção('novaCalculadora02')">Nova Calculadora 02</button>
+			<button onclick="mostrarSeção('novaCalculadora03')">Nova Calculadora 03</button>
+        </div>
+
+        <!-- Seções -->
+        <div id="precos" class="section">
+            <h2>Tabela de Preços</h2>
+            <p>Aqui você pode consultar nossa tabela de preços atualizada.</p>
+			<!-- Insira aqui o código da calculadora -->
+        </div>
+
+        <div id="calculadoraAdesivos" class="section">
+            <h2>Calculadora para Adesivos</h2>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Cartelas de Adesivo</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            scroll-behavior: smooth; /* Rolagem suave */
+            font-family: 'Arial', sans-serif; /* Fonte do layout */
+        }
+
+        .container {
+			text-align: center;
+			background: #fff;
+			padding: 20px; /* Mantém o espaçamento interno */
+			padding-right: 50px; /* Adiciona espaço extra para evitar sobreposição da barra de rolagem */
+			border-radius: 8px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+			width: 400px;
+			max-height: 100%; /* Garante que o conteúdo não ultrapasse a altura da tela */
+			overflow-y: auto; /* Adiciona rolagem vertical */
+			box-sizing: border-box; /* Inclui padding e border no tamanho total */
+}
+
+        input, select, button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        button:hover:enabled {
+            background-color: #0056b3;
+        }
+
+        .result {
+            font-size: 16px;
+            color: #333;
+            margin: 20px 0;
+            text-align: left;
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+        }
+
+        input, button {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Creative Print</h1>
+
+        <!-- Calculadora de Cartelas -->
+        <div class="form-section">
+            <h2>Calculadora de Cartelas de Adesivo</h2>
+            <form id="cartelaForm" autocomplete="off">
+                <input type="number" id="quantidadeCartelas" placeholder="Quantidade de cartelas (und)" required>
+                <input type="number" id="larguraAdesivo" placeholder="Largura do adesivo (cm)" required>
+                <input type="number" id="alturaAdesivo" placeholder="Altura do adesivo (cm)" required>
+                <button type="button" onclick="calcularCartelas()">Calcular</button>
+            </form>
+            <div class="result" id="resultadoCartelas"></div>
+            <button type="button" id="copiarResultadoCartelas" onclick="copiarTexto('resultadoCartelas')" disabled>Copiar Informações</button>
+        </div>
+    </div>
+
+    <script>
+        // Função para calcular cartelas de adesivos
+        function calcularCartelas() {
+            const quantidadeCartelas = parseInt(document.getElementById('quantidadeCartelas').value);
+            const larguraAdesivo = parseFloat(document.getElementById('larguraAdesivo').value);
+            const alturaAdesivo = parseFloat(document.getElementById('alturaAdesivo').value);
+
+            if (isNaN(quantidadeCartelas) || quantidadeCartelas <= 0 || isNaN(larguraAdesivo) || larguraAdesivo <= 0 || isNaN(alturaAdesivo) || alturaAdesivo <= 0) {
+                document.getElementById('resultadoCartelas').innerText = 'Por favor, insira valores válidos.';
+                return;
+            }
+
+            const cartelaLargura = 45; // Largura da cartela (em cm)
+            const cartelaAltura = 55;  // Altura da cartela (em cm)
+            const distanciaEntreAdesivos = 0.5; // Distância entre os adesivos (em cm)
+
+            // Calcular quantos adesivos cabem por linha e por coluna
+            const larguraComEspaco = larguraAdesivo + distanciaEntreAdesivos;
+            const alturaComEspaco = alturaAdesivo + distanciaEntreAdesivos;
+
+            const adesivosPorLinha = Math.floor(cartelaLargura / larguraComEspaco);
+            const adesivosPorColuna = Math.floor(cartelaAltura / alturaComEspaco);
+
+            const adesivosPorCartela = adesivosPorLinha * adesivosPorColuna;
+            const adesivosTotais = adesivosPorCartela * quantidadeCartelas;
+
+            const custoPorCartela = calcularPrecoPorCartela(quantidadeCartelas);
+            const valorTotal = custoPorCartela * quantidadeCartelas;
+
+            // Calcular o prazo de produção baseado na quantidade de cartelas
+            let prazoProducao = 2; // Prazo básico de produção em dias
+            if (quantidadeCartelas > 5) {
+                const diasExtras = Math.floor(quantidadeCartelas / 5) * 1;
+                prazoProducao += diasExtras;
+            }
+
+            const textoResultado = 
+                `*Cartelas de Adesivo*\n` +
+                `Quantidade de cartelas: ${quantidadeCartelas} und\n` +
+                `Tamanho do adesivo: ${larguraAdesivo} x ${alturaAdesivo} cm\n` +
+                `Adesivos por cartela: ${adesivosPorCartela} adesivos\n` +
+                `-\n` +
+                `*Valores*\n` +
+                `Total de adesivos: ${adesivosTotais} adesivos\n` +
+                `Custo por cartela: R$ ${custoPorCartela.toFixed(2)}\n` +
+                `Valor total: R$ ${valorTotal.toFixed(2)}\n` +
+                `-\n` +
+                `*Pagamento*\n` +
+                `O pedido é iniciado após a confirmação de pagamento. Confira as formas de pagamento disponíveis.\n` +
+                `-\n` +
+                `Os valores informados são válidos para pagamentos via PIX ou em dinheiro. Caso prefira realizar o pagamento por cartão, entre em contato conosco para mais informações.\n` +
+                `-\n` +
+                `-\n` +
+                `*Produção*\n` +
+                `Prazo de produção: ${prazoProducao} dias úteis (após aprovação da arte)\n` +
+                `-\n` +
+                `*Criação*\n` +
+                `Caso ainda não tenha o arquivo para impressão, temos o serviço de criação com valor a partir de R$ 20,00\n` +
+                `-\n` +
+                `Orçamento válido por 30 dias\n` +
+                `-\n` +
+                `Creative Print - A sua gráfica delivery🏍️💨`;
+
+            document.getElementById('resultadoCartelas').innerText = textoResultado;
+            document.getElementById('copiarResultadoCartelas').disabled = false;
+
+            // Limpar os campos após o cálculo
+            document.getElementById('quantidadeCartelas').value = '';
+            document.getElementById('larguraAdesivo').value = '';
+            document.getElementById('alturaAdesivo').value = '';
+        }
+
+        // Função para calcular o preço por cartela com base na quantidade
+        function calcularPrecoPorCartela(quantidadeCartelas) {
+            let precoPorCartela;
+            if (quantidadeCartelas >= 20) {
+                precoPorCartela = 8;
+            } else if (quantidadeCartelas >= 10) {
+                precoPorCartela = 10;
+            } else if (quantidadeCartelas >= 6) {
+                precoPorCartela = 15;
+            } else if (quantidadeCartelas >= 5) {
+                precoPorCartela = 17.20;
+            } else if (quantidadeCartelas >= 4) {
+                precoPorCartela = 18;
+            } else if (quantidadeCartelas >= 3) {
+                precoPorCartela = 20;
+            } else {
+                precoPorCartela = 25;
+            }
+            return precoPorCartela;
+        }
+
+        // Função para copiar texto
+function copiarTexto(elementId) {
+    const element = document.getElementById(elementId);
+
+    if (element) {
+        navigator.clipboard.writeText(element.textContent)
+            .then(() => {
+                // Criar um elemento de mensagem
+                const mensagem = document.createElement('div');
+                mensagem.textContent = 'Texto copiado!';
+                mensagem.style.position = 'fixed';
+                mensagem.style.bottom = '20px';
+                mensagem.style.left = '50%';
+                mensagem.style.transform = 'translateX(-50%)';
+                mensagem.style.backgroundColor = '#4CAF50';
+                mensagem.style.color = 'white';
+                mensagem.style.padding = '10px';
+                mensagem.style.borderRadius = '5px';
+                mensagem.style.fontSize = '16px';
+                mensagem.style.zIndex = '9999';
+
+                // Adicionar a mensagem à página
+                document.body.appendChild(mensagem);
+
+                // Remover a mensagem depois de 3 segundos
+                setTimeout(() => {
+                    mensagem.remove();
+                }, 3000);
+            })
+            .catch(err => alert('Erro ao copiar: ' + err));
+    } else {
+        alert('Elemento não encontrado. Verifique o ID fornecido.');
+    }
+}
+    </script>
+</body>
+</html>
+
+        </div>
+
+        <div id="calculadoraBanner" class="section">
+            <h2>Calculadora para Banner</h2>
+            <p><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora - Comunicação Visual</title>
+			<!-- Insira aqui o código da calculadora -->
+        </div>
+
+        <div id="calculadoraImpressao" class="section">
+            <h2>Calculadora para Impressão A4</h2>
+            <p>Obtenha os custos para impressão em folhas A4 de alta qualidade.</p>
+			<!-- Insira aqui o código da calculadora -->
+        </div>
+		
+		<div id="novaCalculadora02" class="section">
+			<h2>Calculadora Nova02</h2>
+			<p>descrição da sua calculadora.</p>
+			<!-- Insira aqui o código da calculadora -->
+		</div>
+		
+		<div id="novaCalculadora03" class="section">
+			<h2>Calculadora Nova03</h2>
+			<p>descrição da sua calculadora.</p>
+			<!-- Insira aqui o código da calculadora -->
+		</div>
+
+        <!-- Botão para voltar à página inicial -->
+        <button id="voltar" class="back-button" onclick="voltarParaMenu()">Voltar à Página Inicial</button>
+    </div>
+
+    <script>
+        function mostrarSeção(seçãoId) {
+            // Esconde o menu principal
+            document.getElementById('menu').style.display = 'none';
+
+            // Mostra apenas a seção selecionada
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(seçãoId).classList.add('active');
+
+            // Exibe o botão de voltar
+            document.getElementById('voltar').classList.add('active');
+        }
+
+        function voltarParaMenu() {
+            // Mostra o menu principal
+            document.getElementById('menu').style.display = 'block';
+
+            // Esconde todas as seções
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Esconde o botão de voltar
+            document.getElementById('voltar').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
